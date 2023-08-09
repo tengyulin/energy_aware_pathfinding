@@ -1,0 +1,107 @@
+2023-04-05 00:16:46     /home/danlin/anaconda3/envs/cryodrgn/bin/cryodrgn train_vae NLRP3_20PDs_SNR01.mrcs --poses poses.pkl --ctf ctf.pkl --enc-dim 256 --dec-dim 256 --zdim 8 -n 50 -o z_8
+2023-04-05 00:16:46     Namespace(particles='/mnt/d/NLRP3/more_rmsd_5/NLRP3_20PDs_SNR01.mrcs', outdir='/mnt/d/NLRP3/more_rmsd_5/z_8', zdim=8, poses='/mnt/d/NLRP3/more_rmsd_5/poses.pkl', ctf='/mnt/d/NLRP3/more_rmsd_5/ctf.pkl', load=None, checkpoint=1, log_interval=1000, verbose=False, seed=26896, ind=None, invert_data=True, window=True, window_r=0.85, datadir=None, lazy=False, preprocessed=False, max_threads=16, tilt=None, tilt_deg=45, num_epochs=50, batch_size=8, wd=0, lr=0.0001, beta=None, beta_control=None, norm=None, amp=True, multigpu=False, do_pose_sgd=False, pretrain=1, emb_type='quat', pose_lr=0.0003, qlayers=3, qdim=256, encode_mode='resid', enc_mask=None, use_real=False, players=3, pdim=256, pe_type='gaussian', feat_sigma=0.5, pe_dim=None, domain='fourier', activation='relu', func=<function main at 0x7ff8b0f6d670>)
+2023-04-05 00:16:47     Use cuda True
+2023-04-05 00:16:47     Loading dataset from /mnt/d/NLRP3/more_rmsd_5/NLRP3_20PDs_SNR01.mrcs
+2023-04-05 00:16:57     Loaded 75560 128x128 images
+2023-04-05 00:16:57     Windowing images with radius 0.85
+2023-04-05 00:16:57     Computing FFT
+2023-04-05 00:16:57     Spawning 12 processes
+2023-04-05 00:17:56     Symmetrizing image data
+2023-04-05 00:18:02     Normalized HT by 0 +/- 106.00669860839844
+2023-04-05 00:18:04     Loading ctf params from /mnt/d/NLRP3/more_rmsd_5/ctf.pkl
+2023-04-05 00:18:05     HetOnlyVAE(
+  (encoder): ResidLinearMLP(
+    (main): Sequential(
+      (0): Linear(in_features=12852, out_features=256, bias=True)
+      (1): ReLU()
+      (2): ResidLinear(
+        (linear): Linear(in_features=256, out_features=256, bias=True)
+      )
+      (3): ReLU()
+      (4): ResidLinear(
+        (linear): Linear(in_features=256, out_features=256, bias=True)
+      )
+      (5): ReLU()
+      (6): ResidLinear(
+        (linear): Linear(in_features=256, out_features=256, bias=True)
+      )
+      (7): ReLU()
+      (8): Linear(in_features=256, out_features=16, bias=True)
+    )
+  )
+  (decoder): FTPositionalDecoder(
+    (decoder): ResidLinearMLP(
+      (main): Sequential(
+        (0): Linear(in_features=392, out_features=256, bias=True)
+        (1): ReLU()
+        (2): ResidLinear(
+          (linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (3): ReLU()
+        (4): ResidLinear(
+          (linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (5): ReLU()
+        (6): ResidLinear(
+          (linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (7): ReLU()
+        (8): Linear(in_features=256, out_features=2, bias=True)
+      )
+    )
+  )
+)
+2023-04-05 00:18:05     3790354 parameters in model
+2023-04-05 00:18:05     3491856 parameters in encoder
+2023-04-05 00:18:05     298498 parameters in deoder
+2023-04-05 00:20:42     # =====> Epoch: 1 Average gen loss = 0.972683, KLD = 28.319792, total loss = 0.972959; Finished in 0:02:36.754816
+2023-04-05 00:23:31     # =====> Epoch: 2 Average gen loss = 0.954167, KLD = 35.864643, total loss = 0.954516; Finished in 0:02:21.772335
+2023-04-05 00:26:07     # =====> Epoch: 3 Average gen loss = 0.949192, KLD = 36.318340, total loss = 0.949545; Finished in 0:02:16.117134
+2023-04-05 00:28:45     # =====> Epoch: 4 Average gen loss = 0.946589, KLD = 36.032321, total loss = 0.946940; Finished in 0:02:16.903019
+2023-04-05 00:31:23     # =====> Epoch: 5 Average gen loss = 0.944809, KLD = 35.608456, total loss = 0.945155; Finished in 0:02:16.854420
+2023-04-05 00:34:00     # =====> Epoch: 6 Average gen loss = 0.943482, KLD = 35.167038, total loss = 0.943824; Finished in 0:02:16.400750
+2023-04-05 00:36:36     # =====> Epoch: 7 Average gen loss = 0.942441, KLD = 34.758921, total loss = 0.942779; Finished in 0:02:15.844630
+2023-04-05 00:39:12     # =====> Epoch: 8 Average gen loss = 0.941575, KLD = 34.439522, total loss = 0.941910; Finished in 0:02:15.935461
+2023-04-05 00:41:49     # =====> Epoch: 9 Average gen loss = 0.94086, KLD = 34.103465, total loss = 0.941191; Finished in 0:02:16.102421
+2023-04-05 00:44:26     # =====> Epoch: 10 Average gen loss = 0.940232, KLD = 33.793234, total loss = 0.940561; Finished in 0:02:16.401803
+2023-04-05 00:47:03     # =====> Epoch: 11 Average gen loss = 0.939691, KLD = 33.543912, total loss = 0.940017; Finished in 0:02:16.318058
+2023-04-05 00:49:39     # =====> Epoch: 12 Average gen loss = 0.939224, KLD = 33.279912, total loss = 0.939548; Finished in 0:02:16.195219
+2023-04-05 00:52:15     # =====> Epoch: 13 Average gen loss = 0.93879, KLD = 33.117857, total loss = 0.939112; Finished in 0:02:15.519992
+2023-04-05 00:54:51     # =====> Epoch: 14 Average gen loss = 0.938413, KLD = 32.928639, total loss = 0.938734; Finished in 0:02:15.703205
+2023-04-05 00:57:27     # =====> Epoch: 15 Average gen loss = 0.938076, KLD = 32.747976, total loss = 0.938394; Finished in 0:02:15.783967
+2023-04-05 01:00:04     # =====> Epoch: 16 Average gen loss = 0.937769, KLD = 32.605474, total loss = 0.938086; Finished in 0:02:16.378119
+2023-04-05 01:02:41     # =====> Epoch: 17 Average gen loss = 0.937474, KLD = 32.428066, total loss = 0.937789; Finished in 0:02:16.310752
+2023-04-05 01:05:18     # =====> Epoch: 18 Average gen loss = 0.937208, KLD = 32.334932, total loss = 0.937522; Finished in 0:02:16.251073
+2023-04-05 01:07:54     # =====> Epoch: 19 Average gen loss = 0.936955, KLD = 32.193634, total loss = 0.937268; Finished in 0:02:15.720795
+2023-04-05 01:10:30     # =====> Epoch: 20 Average gen loss = 0.936731, KLD = 32.100860, total loss = 0.937043; Finished in 0:02:15.619182
+2023-04-05 01:13:06     # =====> Epoch: 21 Average gen loss = 0.936518, KLD = 32.009953, total loss = 0.936829; Finished in 0:02:15.699598
+2023-04-05 01:15:43     # =====> Epoch: 22 Average gen loss = 0.936319, KLD = 31.884876, total loss = 0.936629; Finished in 0:02:16.139889
+2023-04-05 01:18:21     # =====> Epoch: 23 Average gen loss = 0.936144, KLD = 31.858922, total loss = 0.936454; Finished in 0:02:17.094465
+2023-04-05 01:20:57     # =====> Epoch: 24 Average gen loss = 0.935954, KLD = 31.744600, total loss = 0.936263; Finished in 0:02:16.304449
+2023-04-05 01:23:34     # =====> Epoch: 25 Average gen loss = 0.935786, KLD = 31.637160, total loss = 0.936093; Finished in 0:02:15.689783
+2023-04-05 01:26:09     # =====> Epoch: 26 Average gen loss = 0.935633, KLD = 31.642793, total loss = 0.935940; Finished in 0:02:15.797123
+2023-04-05 01:28:45     # =====> Epoch: 27 Average gen loss = 0.935497, KLD = 31.590223, total loss = 0.935805; Finished in 0:02:15.760765
+2023-04-05 01:31:22     # =====> Epoch: 28 Average gen loss = 0.935352, KLD = 31.515693, total loss = 0.935658; Finished in 0:02:16.262039
+2023-04-05 01:33:59     # =====> Epoch: 29 Average gen loss = 0.935214, KLD = 31.433830, total loss = 0.935520; Finished in 0:02:16.512726
+2023-04-05 01:36:36     # =====> Epoch: 30 Average gen loss = 0.935085, KLD = 31.345475, total loss = 0.935390; Finished in 0:02:16.532777
+2023-04-05 01:39:13     # =====> Epoch: 31 Average gen loss = 0.934968, KLD = 31.291689, total loss = 0.935272; Finished in 0:02:15.992593
+2023-04-05 01:41:49     # =====> Epoch: 32 Average gen loss = 0.934846, KLD = 31.286865, total loss = 0.935151; Finished in 0:02:15.703607
+2023-04-05 01:44:25     # =====> Epoch: 33 Average gen loss = 0.934731, KLD = 31.218226, total loss = 0.935035; Finished in 0:02:15.996066
+2023-04-05 01:47:02     # =====> Epoch: 34 Average gen loss = 0.934628, KLD = 31.152628, total loss = 0.934931; Finished in 0:02:16.339370
+2023-04-05 01:49:40     # =====> Epoch: 35 Average gen loss = 0.934528, KLD = 31.147057, total loss = 0.934831; Finished in 0:02:16.963350
+2023-04-05 01:52:17     # =====> Epoch: 36 Average gen loss = 0.934428, KLD = 31.109722, total loss = 0.934730; Finished in 0:02:16.741865
+2023-04-05 01:54:54     # =====> Epoch: 37 Average gen loss = 0.934331, KLD = 31.080385, total loss = 0.934633; Finished in 0:02:16.101012
+2023-04-05 01:57:31     # =====> Epoch: 38 Average gen loss = 0.934234, KLD = 31.034526, total loss = 0.934536; Finished in 0:02:16.297112
+2023-04-05 02:00:08     # =====> Epoch: 39 Average gen loss = 0.934149, KLD = 31.016788, total loss = 0.934450; Finished in 0:02:16.219848
+2023-04-05 02:02:45     # =====> Epoch: 40 Average gen loss = 0.934064, KLD = 30.972183, total loss = 0.934365; Finished in 0:02:16.345053
+2023-04-05 02:05:23     # =====> Epoch: 41 Average gen loss = 0.933978, KLD = 30.924858, total loss = 0.934279; Finished in 0:02:17.062696
+2023-04-05 02:08:00     # =====> Epoch: 42 Average gen loss = 0.933903, KLD = 30.940011, total loss = 0.934204; Finished in 0:02:16.935230
+2023-04-05 02:10:37     # =====> Epoch: 43 Average gen loss = 0.933827, KLD = 30.909541, total loss = 0.934128; Finished in 0:02:16.259381
+2023-04-05 02:13:14     # =====> Epoch: 44 Average gen loss = 0.933743, KLD = 30.871933, total loss = 0.934043; Finished in 0:02:16.234940
+2023-04-05 02:15:51     # =====> Epoch: 45 Average gen loss = 0.933678, KLD = 30.822964, total loss = 0.933977; Finished in 0:02:16.053531
+2023-04-05 02:18:27     # =====> Epoch: 46 Average gen loss = 0.933612, KLD = 30.785270, total loss = 0.933911; Finished in 0:02:16.359387
+2023-04-05 02:21:05     # =====> Epoch: 47 Average gen loss = 0.933539, KLD = 30.773021, total loss = 0.933838; Finished in 0:02:17.136042
+2023-04-05 02:23:42     # =====> Epoch: 48 Average gen loss = 0.933465, KLD = 30.743382, total loss = 0.933764; Finished in 0:02:16.594980
+2023-04-05 02:26:19     # =====> Epoch: 49 Average gen loss = 0.933406, KLD = 30.729889, total loss = 0.933705; Finished in 0:02:16.252630
+2023-04-05 02:28:55     # =====> Epoch: 50 Average gen loss = 0.93335, KLD = 30.718206, total loss = 0.933649; Finished in 0:02:16.188198
+2023-04-05 02:29:38     Finished in 2:12:51.898733 (0:02:39.437975 per epoch)
