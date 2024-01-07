@@ -1,4 +1,9 @@
-# Exploring Conformational Landscape of Cryo-EM Using Energy-Aware Pathfinding Algorithm
+# CLEAPA: Exploring Conformational Landscape of Cryo-EM Using Energy-Aware Pathfinding Algorithm
+
+<div align="center">
+    <img src="https://github.com/tengyulin/energy_aware_pathfinding/assets/11373055/106abb19-b598-4564-95be-38d34e81eec9" width="300">
+</div>
+
 We introduce a novel energy-aware pathfinding algorithm designed to search for the most probable conformational changes in cryo-EM datasets. This approach seeks the shortest pathway on a graph, with edge weights defined as free-energy-like values. Unlike traditional methods that typically operate energy landscape in two or three dimensions (as seen in MEP searches), our algorithm is capable of functioning in higher dimensions. We have tested our method on both synthetic data and the real-world dataset EMPIAR-10076. 
 
 Due to storage limitations, image stacks for the synthetic dataset and details on applying our approach to EMPIAR-10076 can be found [here](https://doi.org/10.5281/zenodo.8229902).
